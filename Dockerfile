@@ -23,7 +23,7 @@ FROM nginx:latest
 COPY --from=build /app/dist/blog-website-frontend-Angular /usr/share/nginx/html
 
 # Copy the Nginx configuration file
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80
 EXPOSE 80
