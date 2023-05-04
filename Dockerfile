@@ -25,7 +25,7 @@ RUN npm run build --prod
 FROM nginx:latest
 
 # Copy the built app from the previous stage
-COPY --from=build /app/dist/blog-website-frontend-Angular /usr/share/nginx/html
+# COPY --from=build /app/dist/blog-website-frontend-Angular /usr/share/nginx/html
 
 # Copy the Nginx configuration file
 COPY nginx.conf /etc/nginx/conf.d/default.conf
