@@ -1,5 +1,5 @@
 # Base image
-FROM node:latest AS build
+FROM node:12 AS build
 
 # Set the working directory
 WORKDIR /app
@@ -8,7 +8,12 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+ RUN npm install
+
+# Install Node.js and npm
+#RUN apt-get update && \
+   # apt-get install -y nodejs npm && \
+  #  ln -s /usr/bin/nodejs /usr/bin/node
 
 # Copy the rest of the application code
 COPY . .
