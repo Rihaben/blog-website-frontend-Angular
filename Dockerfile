@@ -23,6 +23,8 @@ RUN npm run build --prod
 
 # Use a lightweight nginx image to serve the application
 FROM nginx:latest
+# Remove default Nginx website
+RUN rm -rf /usr/share/nginx/html/*
 
 # Copy the built app from the previous stage
  COPY --from=build /app/dist/blog-website-frontend-Angular /usr/share/nginx/html
